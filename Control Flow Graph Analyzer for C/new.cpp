@@ -26,6 +26,7 @@ extern void nameAssign(string name ,int methodNumber);
 //function detection data
 
 string savedFile[limit];
+vector <node> methodTracer;
 //int saveFileSize = 0;
 
 struct node{
@@ -37,9 +38,9 @@ struct node{
 
 } tempNode;
 
-vector <node> methodTracer;
 
-/*************************************/
+
+
 
 int tst;
 int block=0;
