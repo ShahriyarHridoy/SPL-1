@@ -17,15 +17,14 @@
 using namespace std;
 
 
-
-/********************************* variables ***************************/
-extern char commentFreeFile[];
+ //variables 
+//extern char commentFreeFile[];
 extern char advancedResultFile[];
 extern void nameAssign(string name ,int methodNumber);
 
 
-/**** function detection data***********/
-char methodAreaFile[] = "methodArea.txt";
+//function detection data
+
 string savedFile[limit];
 //int saveFileSize = 0;
 
@@ -52,7 +51,7 @@ string keys[] = { "if", "for", "while", "else", "case",  "switch", "main"};
 
 
 
-string commentFreeFileInput(string line) {
+string commentFreeFile(string line) {
 
     if(line.length() == 0 ) {
         return "";      // Ignores empty Lines
@@ -135,7 +134,7 @@ void fileOpenInString(char * filename){
        // while(!iFile.eof()){ 
          while(getline(iFile,line)){   //Reads as long as we do not reach the end of file
 
-            savedFile[saveFileSize] = commentFreeFileInput(line);
+            savedFile[saveFileSize] = commentFreeFile(line);
             //Saving file in string
             //getline(iFile, line);
             cout<< savedFile[saveFileSize]<< endl;
@@ -152,7 +151,7 @@ void fileOpenInString(char * filename){
 
 
 
-string findStringBeforeFirstBrace(string line){    
+/*string findString(string line){    
 
     int firstBracePosition = -1;    //Location of (
     int len = line.size();
@@ -170,12 +169,12 @@ string findStringBeforeFirstBrace(string line){
 
     if(firstBracePosition != -1 ) return line.substr(0,firstBracePosition);
     else return "";
-}
+}*/
 
 
 
 
-void findName(){
+/*void checkName(){
 
     int tempSize = methodTracer.size();//Size of total methods
     for(int i=0; i<tempSize; i++) {
@@ -185,8 +184,8 @@ void findName(){
 
         int counter;
         string word;
-        /** If we found the method name in the line of second brace*/
-        istringstream iss( findStringBeforeFirstBrace(savedFile[firstLine]) );  /** Check whether name exits with the second brace*/
+        // If we found the method name in the line of second brace
+        istringstream iss( findStringBeforeFirstBrace(savedFile[firstLine]) );  // Check whether name exits with the second brace
         for(counter = 0 ; iss>>word; counter++) {
             tempWords[counter] = word;
         }
@@ -196,7 +195,7 @@ void findName(){
         }
 
         if(word==" "){
-            istringstream iss1( savedFile[firstLine-1] ) ;  /** Check previous line if keyword not found in that line*/
+            istringstream iss1( savedFile[firstLine-1] ) ;  // Check previous line if keyword not found in that line
             for(counter = 0 ; iss1>>word; counter++) {
                 tempWords[counter] = word;
                 
@@ -209,7 +208,7 @@ void findName(){
         }
     }
 
-}
+}*/
 
 
 /* Find total number of occurrences of a key in a word*/
