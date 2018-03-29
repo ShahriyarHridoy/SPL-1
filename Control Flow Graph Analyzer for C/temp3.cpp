@@ -293,9 +293,9 @@ void printnode(){
     
 }
 
-int main(int argc, char *argv[]){
+int main(){
 
-    fileOpenInString(argv[1]);
+    fileOpenInString("test2.c");
 
 
     stack <char> doubleQoute;   //Saves double quotes
