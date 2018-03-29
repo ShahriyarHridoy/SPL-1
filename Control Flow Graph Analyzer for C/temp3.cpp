@@ -265,10 +265,18 @@ void printnode(){
     int tempSize = methodTracer.size();//Size of total methods
     for(int i=0; i<tempSize; i++){
         //printf("%s = %d to %d" )
+       
+       
+       
+       /*
+       
         int check = methodTracer[i].finishLine;
         if(check== 55555){
             methodTracer[i].finishLine = methodTracer[i+1].finishLine + 1;
-        }
+        }*/
+        
+        
+        
         cout<< methodTracer[i].name <<"\t"<< methodTracer[i].startLine<<"\t" << methodTracer[i].finishLine <<"\n" ;
     }
     
@@ -293,6 +301,7 @@ int main(int argc, char *argv[]){
     stack <char> doubleQoute;   //Saves double quotes
     stack <char> firstBracket;  //Saves first braces
     methodTracer.clear();       // Clears the method tracer 
+    int p=0;
     
     
 
@@ -341,7 +350,11 @@ int main(int argc, char *argv[]){
 
         int strLen = savedFile[i].size();   //check 1st line string size
         int check=0;
-        for(int l=0; l< strLen; l++){
+  /* 
+  
+  
+  
+       for(int l=0; l< strLen; l++){
             if(counter==1){                  //if keyword found then check the first "{" (second brucket) found or not in that line
                 if(savedFile[i][l]=='{')
                     check=1;
@@ -387,38 +400,45 @@ int main(int argc, char *argv[]){
         
         
         if(test==i){
+        
+        
+        
+        
+        
+        */
             
             //if(counter==1) tempNode.name= keyWord[i];
 
             for(int j=0; j< strLen; j++) {
 
-                if( doubleQoute.empty() && savedFile[i][j]=='{' ) {
+                if( doubleQoute.empty() && savedFile[i][j]=='{'  ) {
                     tempNode.startLine = i;
                     doubleQoute.push('{');
                     tempNode.name= kw;
 
                 }
-                else if(doubleQoute.size() == 1 && savedFile[i][j]=='}') {
+                else if(doubleQoute.size() == 1 && savedFile[i][j]=='}'  ) {
                     tempNode.finishLine = i;
                     methodTracer.push_back(tempNode);
                     doubleQoute.pop();
                     firstBracket.pop();
                     firstBracket.pop();
-
+                    cout<< methodTracer[p].name <<"\t"<< methodTracer[p].startLine<<"\t" << methodTracer[p].finishLine <<"\n" ;
+                    p++;
                 }
                  if(savedFile[i][j] == '{') {
 
                     doubleQoute.push('{');
-                    start[st]=i;
-                    st++;
+                   // start[st]=i;
+                   // st++;
                     
                     
                 }
                 else if(savedFile[i][j] == '}') {
 
                     doubleQoute.pop();
-                   finish[fi]=i;
-                   fi++;
+                  // finish[fi]=i;
+                  // fi++;
                 }
                // else if
                 //Checks for () Because no struct or array contains () but it contains {} 
@@ -427,10 +447,11 @@ int main(int argc, char *argv[]){
                 }
                 else if(savedFile[i][j] == ')' && doubleQoute.empty() && firstBracket.size()==1) {
                     firstBracket.push(')');
-                } */
+                } 
+                */
 
             }   
-        }
+        //}
         
     }
 
