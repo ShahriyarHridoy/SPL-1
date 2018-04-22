@@ -28,7 +28,6 @@ extern void nameAssign(string name ,int methodNumber);
 char methodAreaFile[] = "methodArea.txt";
 string savedFile[limit];
 int sLineArr[limit];
-int printFlow[limit];
 //int saveFileSize = 0;
 
 struct node{
@@ -41,7 +40,6 @@ struct node{
 } tempNode;
 
 vector <node> methodTracer;
-//std::priority_queue<int, std::vector<int>, std::greater<int>> printFlow ;
 
 
 /*************************************/
@@ -268,8 +266,6 @@ int findKeyword(string word, string key) {
 
 
 void printnode(){
-
-    int k=0, temp2;
     int tempSize = methodTracer.size();//Size of total methods
     for(int j=0; j<lcount; j++){
         for(int i=0; i<tempSize; i++){
@@ -287,16 +283,6 @@ void printnode(){
 
 
                 cout<< methodTracer[i].name <<"\t"<< methodTracer[i].startLine<<"\t" << methodTracer[i].finishLine <<"\n" ;
-
-
-
-                printFlow[k]= methodTracer[i].startLine;
-                cout<< "...."<<printFlow[k]<< "......";
-                k++;
-                printFlow[k]= methodTracer[i].finishLine;
-                cout<< "...."<<printFlow[k]<< "......";
-                k++;
-
             }
         }
     }
@@ -309,126 +295,10 @@ void printnode(){
 
         }*/
 
-    for(int k=0; k< (tempSize*2); k++){
-
-        cout << printFlow[k] << "\n";
-
-    }
-
-
-    cout <<  "************\n";
-
-
-    for(int i=0;i<(tempSize*2);i++){
-
-         for(int j=0;j<(tempSize*2)-i-1;j++){
-
-             if(printFlow[j]>printFlow[j+1]){
-
-                 temp2=printFlow[j];
-                 printFlow[j]=printFlow[j+1];
-                 printFlow[j+1]=temp2;
-
-             }
-         }
-     }
-
-    for(int k=0; k< (tempSize*2); k++){
-
-        cout << printFlow[k] << "\n";
-
-    }
-
-
-}
-
-
-
-
-
-
-
-
-void flowMaker(){
-
-    int k=0, temp2;
-    //priority_queue<int,vector<int>, compare > ;
-    int tempSize = methodTracer.size();//Size of total methods
-    for(int j=0; j<tempSize*2; j++){
-
-
-
-
-        for(int i=0; i<tempSize; i++){
-
-            if(printFlow[j] == methodTracer[i].startLine){
-
-               cout<<"\t"<< methodTracer[i].name << "   start in"<<"\t" << methodTracer[i].startLine <<"\n" ;
-
-               for( int k=0; k<5; k++){
-                    if(k==4) cout<< "\t\t"<< "\\/"<< "\n";
-                    else cout<<"\t\t" << "||"<< "\n";
-               }
-
-
-            }
-
-
-        }
-       
-
-
-
-    }
-
-
-
-
-
-   // print_queue(printFlow);
-
-
-
-  /*   for(int i=0;i<=10;i++){
-
-         for(int j=0;j<=10-i;j++){
-
-             if(printFlow[j]>printFlow[j+1]){
-
-                 temp2=printFlow[j];
-                 printFlow[j]=printFlow[j+1];
-                 printFlow[j+1]=temp2;
-
-             }
-         }
-     }
-
-
-     for(int k=0; k<tempSize; k++){
-
-        cout << printFlow[k];
-
-    }*/
-
-
-
-
-
-
-
-
 
 
 
 }
-
-
-
-
-
-
-
-
 
 int main(){
 
@@ -620,7 +490,6 @@ int main(){
     // Assign name to each methods
    //findName();
     printnode();
-    flowMaker();
 
 
 
