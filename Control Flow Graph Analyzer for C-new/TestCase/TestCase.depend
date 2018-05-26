@@ -1,0 +1,46 @@
+# depslib dependency file v1.0
+1522310118 source:/home/iit/Desktop/Control Flow Graph Analyzer for C/temp3.cpp
+	<bits/stdc++.h>
+	<iostream>
+	<string>
+	<vector>
+	<fstream>
+	<queue>
+	<stack>
+	<algorithm>
+	<cstring>
+	<map>
+	<functional>
+	<cstdio>
+	<strstream>
+
+1522311173 source:/home/iit/Desktop/project spl-1/TestCase/main.cpp
+	<bits/stdc++.h>
+	<iostream>
+	<string>
+	<vector>
+	<fstream>
+	<queue>
+	<stack>
+	<algorithm>
+	<cstring>
+	<map>
+	<functional>
+	<cstdio>
+	<strstream>
+
+1522311173 source:/home/iit/Desktop/Control Flow Graph Analyzer for C/TestCase/main.cpp
+	<bits/stdc++.h>
+	<iostream>
+	<string>
+	<vector>
+	<fstream>
+	<queue>
+	<stack>
+	<algorithm>
+	<cstring>
+	<map>
+	<functional>
+	<cstdio>
+	<strstream>
+

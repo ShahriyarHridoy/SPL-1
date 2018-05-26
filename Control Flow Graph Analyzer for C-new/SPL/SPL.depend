@@ -1,0 +1,48 @@
+# depslib dependency file v1.0
+1522469868 source:d:\main.cpp
+	<bits/stdc++.h>
+	<iostream>
+	<string>
+	<vector>
+	<fstream>
+	<queue>
+	<stack>
+	<algorithm>
+	<cstring>
+	<map>
+	<functional>
+	<cstdio>
+	<strstream>
+
+1522492448 >
+
+1522492448 source:g:\spl\main.cpp
+	<bits/stdc++.h>
+	<iostream>
+	<string>
+	<vector>
+	<fstream>
+	<queue>
+	<stack>
+	<algorithm>
+	<cstring>
+	<map>
+	<functional>
+	<cstdio>
+	<strstream>
+
+1524022097 source:/home/iit/Desktop/SPL/main.cpp
+	<bits/stdc++.h>
+	<iostream>
+	<string>
+	<vector>
+	<fstream>
+	<queue>
+	<stack>
+	<algorithm>
+	<cstring>
+	<map>
+	<functional>
+	<cstdio>
+	<strstream>
+
