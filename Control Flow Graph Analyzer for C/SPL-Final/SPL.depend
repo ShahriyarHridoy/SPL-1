@@ -47,3 +47,19 @@
 	<strstream>
 	<fstream>
 
+1527612412 source:/home/iit/Desktop/SPL-Final/main.cpp
+	<bits/stdc++.h>
+	<iostream>
+	<string>
+	<vector>
+	<fstream>
+	<queue>
+	<stack>
+	<algorithm>
+	<cstring>
+	<map>
+	<functional>
+	<cstdio>
+	<strstream>
+	<fstream>
+

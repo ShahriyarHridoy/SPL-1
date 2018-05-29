@@ -362,6 +362,26 @@ void flowMaker(){
     int k=0, temp2;
     //priority_queue<int,vector<int>, compare > ;
     int tempSize = methodTracer.size();//Size of total methods
+
+
+    for(int j=0; j<tempSize; j++){
+
+        if(( methodTracer[j].name == "for") || (methodTracer[j].name == "while")){
+
+            //my<<" \n"<< methodTracer[j].name << methodTracer[j].finishLine  <<"  ->"  << methodTracer[j].name << methodTracer[j].startLine ;
+            my<<" \n"<< methodTracer[j].name << methodTracer[j].startLine  <<"  ->"  << methodTracer[j].name << methodTracer[j].finishLine ;
+        }
+
+
+       // if((methodTracer[j].name == "if")){
+       //         my<<" \n"<< methodTracer[j].name << methodTracer[j].startLine  <<"  ->"  << methodTracer[j].name << methodTracer[j].finishLine ;
+      //  }
+
+    }
+
+
+
+
     for(int j=0; j<tempSize*2; j++){
 
 
@@ -412,12 +432,12 @@ void flowMaker(){
         if(( methodTracer[j].name == "for") || (methodTracer[j].name == "while")){
 
             my<<" \n"<< methodTracer[j].name << methodTracer[j].finishLine  <<"  ->"  << methodTracer[j].name << methodTracer[j].startLine ;
-            my<<" \n"<< methodTracer[j].name << methodTracer[j].startLine  <<"  ->"  << methodTracer[j].name << methodTracer[j].finishLine ;
+           // my<<" \n"<< methodTracer[j].name << methodTracer[j].startLine  <<"  ->"  << methodTracer[j].name << methodTracer[j].finishLine ;
         }
 
 
-        if((methodTracer[j].name == "if")){
-                my<<" \n"<< methodTracer[j].name << methodTracer[j].startLine  <<"  ->"  << methodTracer[j].name << methodTracer[j].finishLine ;
+        if((methodTracer[j].name == "if") && (methodTracer[j+1].name == "else")){
+                my<<" \n"<< methodTracer[j].name << methodTracer[j].startLine  <<"  ->"  << methodTracer[j+1].name << methodTracer[j+1].startLine ;
         }
 
     }
@@ -480,7 +500,7 @@ void flowMaker(){
 
 int main(){
 
-    fileOpenInString("/home/iit/Desktop/SPL/test2.c");
+    fileOpenInString("/home/iit/Desktop/SPL-Final/test3.c");
 
 
     //stack <char> doubleQoute;   //Saves double quotes
